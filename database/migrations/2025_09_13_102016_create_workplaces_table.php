@@ -16,7 +16,7 @@ return new class extends Migration
             $table->char('workplaces_code', 10)->unique(); // Unique code for the workplace
             $table->string('name'); // Display name of the education office/school
             $table->char('type', 10); // ministry, provincial, zonal, divisional, school
-            $table->char('main_ref_table_id', 10); // Main reference table identifier
+            $table->char('main_ref_table_id', 10)->unique(); // Main reference table identifier
             $table->timestamps();
 
             $table->foreign('type')->references('office_level_id')->on('office_levels')->onDelete('cascade')->onUpdate('cascade');

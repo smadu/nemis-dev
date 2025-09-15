@@ -22,7 +22,8 @@
 
             <flux:navlist.group expandable heading="Employers" class="grid">
                 <flux:navlist.item :href="route('employers.index')" :current="request()->routeIs('employers.index')" wire:navigate >{{ __('All Employer') }}</flux:navlist.item>
-                <flux:navlist.item :href="route('employer.create')" :current="request()->routeIs('employer.create')" wire:navigate >{{ __('Employer Create') }}</flux:navlist.item>
+                <flux:navlist.item :href="route('teacher.list')" :current="request()->routeIs('teacher.list')" wire:navigate >{{ __('Teacher') }}</flux:navlist.item>
+                <flux:navlist.item :href="route('principal.list')" :current="request()->routeIs('principal.list')" wire:navigate >{{ __('Principal') }}</flux:navlist.item>
             </flux:navlist.group>
         </flux:navlist>
 
