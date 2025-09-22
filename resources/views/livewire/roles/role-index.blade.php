@@ -54,15 +54,23 @@
                             </div>
                         </td>
                         <td class="px-6 py-4 whitespace-nowrap">
-                            @if ($role->permissions)
-                                @foreach ($role->permissions as $permission)
-                                    <flux:badge class="mt-1">{{ $permission->name }}</flux:badge>
-                                @endforeach
+                            @if ($role->permissions->count())
+                                <div class="flex flex-wrap gap-1">
+                                    @foreach ($role->permissions as $permission)
+                                        <flux:badge class="mt-1">{{ $permission->name }}</flux:badge>
+                                    @endforeach
+                                </div>
+                            @else
+                                <span class="text-gray-400 text-sm">No permissions</span>
                             @endif
                         </td>
+
                         <td class="px-6 py-4 whitespace-nowrap  text-sm font-medium">
-                            <a href="{{ route('roles.edit', $role->id) }}" class="text-indigo-600 hover:text-indigo-900">Edit</a>
-                            <button wire:click="delete({{ $role->id }})" wire:confirm="Are you sure you want to delete this role?" class="ml-2 text-red-600 hover:text-red-900">Delete</button>
+                            <a href="{{ route('roles.edit', $role->id) }}"
+                                class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                            <button wire:click="delete({{ $role->id }})"
+                                wire:confirm="Are you sure you want to delete this role?"
+                                class="ml-2 text-red-600 hover:text-red-900">Delete</button>
                         </td>
                     </tr>
                 @endforeach

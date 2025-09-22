@@ -15,21 +15,27 @@
 
         <flux:navlist variant="outline">
             <flux:navlist.group :heading="__('Platform')" class="grid">
-                <flux:navlist.item icon="home" :href="route('dashboard')" :current="request()->routeIs('dashboard')" wire:navigate>{{ __('Dashboard') }}</flux:navlist.item>
-                <flux:navlist.item icon="link-slash" :href="route('roles.index')" :current="request()->routeIs('roles.index')" wire:navigate>{{ __('Roles') }}</flux:navlist.item>
+                <flux:navlist.item icon="home" :href="route('dashboard')" :current="request()->routeIs('dashboard')"
+                    wire:navigate>{{ __('Dashboard') }}</flux:navlist.item>
+                @role('super admin')
+                <flux:navlist.item icon="link-slash" :href="route('roles.index')"
+                    :current="request()->routeIs('roles.index')" wire:navigate>{{ __('Roles') }}</flux:navlist.item>
+                @endrole
                 <flux:navlist.item icon="users" :href="route('users.index')" :current="request()->routeIs('users.index')" wire:navigate>{{ __('Users') }}</flux:navlist.item>
             </flux:navlist.group>
 
             <flux:navlist.group expandable heading="Employers" class="grid">
-                <flux:navlist.item :href="route('employers.index')" :current="request()->routeIs('employers.index')" wire:navigate >{{ __('All Employer') }}</flux:navlist.item>
-                <flux:navlist.item :href="route('teacher.list')" :current="request()->routeIs('teacher.list')" wire:navigate >{{ __('Teacher') }}</flux:navlist.item>
-                <flux:navlist.item :href="route('principal.list')" :current="request()->routeIs('principal.list')" wire:navigate >{{ __('Principal') }}</flux:navlist.item>
+                <flux:navlist.item :href="route('teacher.list')" :current="request()->routeIs('teacher.list')"
+                    wire:navigate>{{ __('Teacher') }}</flux:navlist.item>
+                <flux:navlist.item :href="route('principal.list')" :current="request()->routeIs('principal.list')"
+                    wire:navigate>{{ __('Principal') }}</flux:navlist.item>
             </flux:navlist.group>
+
         </flux:navlist>
 
         <flux:spacer />
 
-        {{-- <flux:navlist variant="outline">
+        <flux:navlist variant="outline">
             <flux:navlist.item icon="folder-git-2" href="https://github.com/laravel/livewire-starter-kit"
                 target="_blank">
                 {{ __('Repository') }}
@@ -39,7 +45,7 @@
                 target="_blank">
                 {{ __('Documentation') }}
             </flux:navlist.item>
-        </flux:navlist> --}}
+        </flux:navlist>
 
         <!-- Desktop User Menu -->
         <flux:dropdown class="hidden lg:block" position="bottom" align="start">
@@ -68,8 +74,8 @@
                 <flux:menu.separator />
 
                 <flux:menu.radio.group>
-                    <flux:menu.item :href="route('settings.profile')" icon="cog" wire:navigate>{{ __('Settings') }}
-                    </flux:menu.item>
+                    <flux:menu.item :href="route('settings.profile')" icon="cog" wire:navigate>
+                        {{ __('Settings') }}</flux:menu.item>
                 </flux:menu.radio.group>
 
                 <flux:menu.separator />
@@ -115,8 +121,8 @@
                 <flux:menu.separator />
 
                 <flux:menu.radio.group>
-                    <flux:menu.item :href="route('settings.profile')" icon="cog" wire:navigate>{{ __('Settings') }}
-                    </flux:menu.item>
+                    <flux:menu.item :href="route('settings.profile')" icon="cog" wire:navigate>
+                        {{ __('Settings') }}</flux:menu.item>
                 </flux:menu.radio.group>
 
                 <flux:menu.separator />

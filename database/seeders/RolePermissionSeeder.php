@@ -14,7 +14,7 @@ class RolePermissionSeeder extends Seeder
         // Reset cached roles and permissions
         app()[\Spatie\Permission\PermissionRegistrar::class]->forgetCachedPermissions();
 
-        // Create permissions for all levels
+        // Create permissions
         $permissions = [
             // School Level Permissions
             'manage school', 'view school', 'create school', 'edit school', 'delete school',
@@ -53,5 +53,9 @@ class RolePermissionSeeder extends Seeder
         foreach ($permissions as $permission) {
             Permission::firstOrCreate(['name' => $permission]);
         }
+
+        // Create Super Admin role and give all permissions
+        $superAdminRole = Role::firstOrCreate(['name' => 'super admin']);
+        $superAdminRole->syncPermissions(Permission::all());
     }
 }

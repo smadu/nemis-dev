@@ -6,9 +6,13 @@
         <flux:separator variant="subtle" />
 
         <div class="my-4 gap-2 justify-end flex">
-            <a href="{{route('teacher.create')}}">
-                Create Teacher
-            </a>
+
+            @can('create teachers')
+                <a href="{{ route('teacher.create') }}">
+                    Create Teacher
+                </a>
+            @endcan
+
         </div>
 
         <table class="min-w-full divide-y divide-gray-200 overflow-x-auto">

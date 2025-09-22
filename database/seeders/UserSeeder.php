@@ -17,6 +17,16 @@ class UserSeeder extends Seeder
         $peopleRecords = People::all();
 
         foreach ($peopleRecords as $person) {
+            // Skip the special NIC (Super Admin)
+            if ($person->nic === '999999999V') {
+                continue;
+            }
+
+            // Skip if this NIC already has a user
+            if (User::where('nic', $person->nic)->exists()) {
+                continue;
+            }
+
             User::create([
                 'nic' => $person->nic,               // use NIC from people table
                 'people_id' => $person->people_id,  // foreign key
@@ -32,14 +42,15 @@ class UserSeeder extends Seeder
             ]);
         }
 
+
         // Optional: create an admin user
         // User::create([
-        //     'nic' => 'ADMIN000001',
+        //     'nic' => 'ADMIN0000001',
         //     'people_id' => $peopleIds[0] ?? null,
-        //     'name' => 'Admin User',
-        //     'email' => 'admin@example.com',
-        //     'contact' => '0712345678',
-        //     'password' => Hash::make('admin123'),
+        //     'name' => 'Super Admin',
+        //     'email' => 'madusanka.app.online@gmail.com',
+        //     'contact' => '0767327872',
+        //     'password' => Hash::make('admin@123'),
         //     'profile_picture' => null,
         //     'remember_token' => Str::random(10),
         // ]);
