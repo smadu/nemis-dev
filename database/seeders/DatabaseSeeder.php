@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
         $this->call(EthnicitySeeder::class);
         $this->call(TitleSeeder::class);
         $this->call(CivilStatusSeeder::class);
+        $this->call(GenderSeeder::class);
 
         $this->call(ProvinceSeeder::class);
         $this->call(DistrictSeeder::class);
@@ -36,6 +37,11 @@ class DatabaseSeeder extends Seeder
         $this->call(DivisionalEducationOfficeSeeder::class);
         $this->call(InstitutionSeeder::class);
 
+        $this->call(ServiceSeeder::class);
+        $this->call(ServiceRankSeeder::class);
+        $this->call(PositionSeeder::class);
+
+        $this->call(SuperAdminSeeder::class);
         $this->call(PeopleSeeder::class);
         $this->call(UserSeeder::class);
 

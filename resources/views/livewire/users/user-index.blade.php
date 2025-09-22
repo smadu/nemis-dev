@@ -6,8 +6,9 @@
         <flux:separator variant="subtle" />
 
         <div class="my-4 gap-2 justify-end flex">
-            
-            
+            <a href="{{route('users.create')}}">
+                Create Teacher
+            </a>
         </div>
 
         <table class="min-w-full divide-y divide-gray-200 overflow-x-auto">
@@ -74,7 +75,7 @@
                             </span>
                         </td>
                         <td class="px-6 py-4 whitespace-nowrap  text-sm font-medium">
-                            <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                            <a href="{{ route('users.edit', $user->id) }}" class="text-indigo-600 hover:text-indigo-900">Edit</a>
                             <a href="#" class="ml-2 text-red-600 hover:text-red-900">Delete</a>
                         </td>
                     </tr>

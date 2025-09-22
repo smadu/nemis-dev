@@ -1,44 +1,3 @@
-<?php
-
-use App\Models\User;
-use Illuminate\Auth\Events\Registered;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Validation\Rules;
-use Livewire\Attributes\Layout;
-use Livewire\Volt\Component;
-
-new #[Layout('components.layouts.auth')] class extends Component {
-    public string $name = '';
-    public string $nic = '';
-    public string $email = '';
-    public string $contact = '';
-    public string $password = '';
-    public string $password_confirmation = '';
-
-    /**
-     * Handle an incoming registration request.
-     */
-    public function register(): void
-    {
-        $validated = $this->validate([
-            'name' => ['required', 'string', 'max:255'],
-            'nic' => ['required', 'string', 'max:12', 'unique:' . User::class],
-            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:' . User::class],
-            'contact' => ['required', 'string', 'max:10'],
-            'password' => ['required', 'string', 'confirmed', Rules\Password::defaults()],
-        ]);
-
-        $validated['password'] = Hash::make($validated['password']);
-
-        event(new Registered(($user = User::create($validated))));
-
-        Auth::login($user);
-
-        $this->redirectIntended(route('dashboard', absolute: false), navigate: true);
-    }
-}; ?>
-
 <div class="flex flex-col gap-6">
     <x-auth-header :title="__('Create an account')" :description="__('Enter your details below to create your account')" />
 
@@ -55,28 +14,6 @@ new #[Layout('components.layouts.auth')] class extends Component {
             autofocus
             autocomplete="name"
             :placeholder="__('Full name')"
-        />
-
-        <!-- NIC -->
-        <flux:input
-            wire:model="nic"
-            :label="__('NIC')"
-            type="text"
-            required
-            autofocus
-            autocomplete="nic"
-            :placeholder="__('National Identity Card number')"
-        />
-
-        <!-- Contact -->
-        <flux:input
-            wire:model="contact"
-            :label="__('Contact')"
-            type="text"
-            required
-            autofocus
-            autocomplete="contact"
-            :placeholder="__('Contact number')"
         />
 
         <!-- Email Address -->
