@@ -25,10 +25,16 @@
             </flux:navlist.group>
 
             <flux:navlist.group expandable heading="Employers" class="grid">
-                <flux:navlist.item :href="route('teacher.list')" :current="request()->routeIs('teacher.list')"
-                    wire:navigate>{{ __('Teacher') }}</flux:navlist.item>
-                <flux:navlist.item :href="route('principal.list')" :current="request()->routeIs('principal.list')"
-                    wire:navigate>{{ __('Principal') }}</flux:navlist.item>
+                <flux:navlist.item icon="user-group" :href="route('teacher.list')" :current="request()->routeIs('teacher.list')"
+                    wire:navigate>{{ __('Teachers') }}</flux:navlist.item>
+                <flux:navlist.item icon="users" :href="route('principal.list')" :current="request()->routeIs('principal.list')"
+                    wire:navigate>{{ __('Principals') }}</flux:navlist.item>
+            </flux:navlist.group>
+
+            <flux:navlist.group expandable heading="Institutions" class="grid">
+                <flux:navlist.item icon="academic-cap" :href="route('school.list')" :current="request()->routeIs('school.list')"
+                    wire:navigate>{{ __('Schools') }}</flux:navlist.item>
+
             </flux:navlist.group>
 
         </flux:navlist>
