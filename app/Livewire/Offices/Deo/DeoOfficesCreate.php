@@ -8,9 +8,7 @@ use Livewire\Attributes\Validate;
 
 use App\Models\Authority;
 use App\Models\Workplaces;
-use App\Models\Institution;
 use App\Models\DistrictsList;
-use App\Models\InstitutionCategory;
 use App\Models\ZonalEducationOffice;
 use App\Models\DivisionalEducationOffice;
 use App\Models\ProvincialEducationOffice;
@@ -63,7 +61,6 @@ class DeoOfficesCreate extends Component
     public $districtOption = [];
     public $zonalOfficeOption = [];
 
-    public $censusExists = false;
     public $workplaceIdExists = false;
 
     public function mount(){
@@ -71,10 +68,6 @@ class DeoOfficesCreate extends Component
         $this->districtOption = DistrictsList::orderBy('district_id', 'asc')->get();
     }
 
-    public function updatedCensusNo($value)
-    {
-        $this->censusExists = Institution::where('census_No', $value)->exists();
-    }
 
     public function updatedWorkplaceId($value)
     {

@@ -8,7 +8,6 @@ use Livewire\Attributes\Validate;
 
 use App\Models\Workplaces;
 use App\Models\DistrictsList;
-use App\Models\InstitutionCategory;
 use App\Models\ProvincialEducationOffice;
 
 class ZeoOfficesCreate extends Component
@@ -55,17 +54,11 @@ class ZeoOfficesCreate extends Component
     public $provinceOption = [];
     public $districtOption = [];
 
-    public $censusExists = false;
     public $workplaceIdExists = false;
 
     public function mount(){
         $this->provinceOption = ProvincialEducationOffice::orderBy('short_name', 'asc')->get();
         $this->districtOption = DistrictsList::orderBy('district_id', 'asc')->get();
-    }
-
-    public function updatedCensusNo($value)
-    {
-        $this->censusExists = Institution::where('census_No', $value)->exists();
     }
 
     public function updatedWorkplaceId($value)

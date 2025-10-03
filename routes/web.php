@@ -27,6 +27,7 @@ use App\Livewire\Offices\Zeo\ZeoOfficesList;
 use App\Livewire\Offices\Deo\DeoOfficesCreate;
 use App\Livewire\Offices\Moe\MoeOfficesCreate;
 use App\Livewire\Offices\Peo\PeoOfficesCreate;
+use App\Livewire\Offices\Pmoe\PmoeOfficesList;
 use App\Livewire\Offices\Zeo\ZeoOfficesCreate;
 use App\Livewire\Institutions\InstitutionsIndex;
 use App\Livewire\Offices\Pmoe\PmoeOfficesCreate;
@@ -67,11 +68,14 @@ Route::middleware(['auth'])->group(function () {
     Route::get('offices/peo/list', PeoOfficesList::class)->name('offices.peo.list');
     Route::get('offices/peo/create', PeoOfficesCreate::class)->name('offices.peo.create');
 
+    Route::get('offices/pmoe/list', PmoeOfficesList::class)->name('offices.pmoe.list');
+    Route::get('offices/pmoe/create', PmoeOfficesCreate::class)->name('offices.pmoe.create');
+
+
 
     Route::get('offices', OfficesIndex::class)->name('offices.index');
 
     Route::get('offices/moe/create', MoeOfficesCreate::class)->name('offices.moe.create');
-    Route::get('offices/pmoe/create', PmoeOfficesCreate::class)->name('offices.pmoe.create');
 
 
         // In web.php or api.php

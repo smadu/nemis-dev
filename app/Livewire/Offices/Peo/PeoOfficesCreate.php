@@ -47,18 +47,12 @@ class PeoOfficesCreate extends Component
     #[Validate('required|numeric|max:81.881|min:79.652')]
     public $longitude;
 
-    public $censusExists = false;
     public $workplaceIdExists = false;
 
     public $provinceOption = [];
 
     public function mount(){
         $this->provinceOption = ProvincialMinistryOfEducationOffice::orderBy('short_name', 'asc')->get();
-    }
-
-    public function updatedCensusNo($value)
-    {
-        $this->censusExists = Institution::where('census_No', $value)->exists();
     }
 
     public function updatedWorkplaceId($value)
