@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class People extends Model
 {
@@ -22,7 +23,7 @@ class People extends Model
         'date_of_birth',
         'religion_id',
         'ethnicity_id',
-        'civil_status',
+        'civil_status_id',
         'health_condition',
         'blood_group_id',
         'email',

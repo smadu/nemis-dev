@@ -2,23 +2,23 @@
 
 namespace App\Livewire\Teacher;
 
-use App\Models\AppointmentCategorie;
-use App\Models\BloodGroup;
-use App\Models\CivilStatus;
-use App\Models\DistrictsList;
-use App\Models\DivisionalSecretariatOffice;
+use App\Models\Title;
+use App\Models\Service;
+use Livewire\Component;
+use App\Models\Position;
 use App\Models\Ethnicity;
+use App\Models\BloodGroup;
 use App\Models\GenderList;
 use App\Models\GnDivision;
-use App\Models\InstitutionType;
-use App\Models\OfficeLevel;
-use App\Models\Position;
-use App\Models\Service;
-use App\Models\ServiceRank;
-use App\Models\Title;
 use App\Models\Workplaces;
-use Livewire\Component;
+use App\Models\CivilStatus;
+use App\Models\OfficeLevel;
+use App\Models\ServiceRank;
+use App\Models\DistrictsList;
+use App\Models\InstitutionType;
 use Livewire\Attributes\Validate;
+use App\Models\AppointmentCategory;
+use App\Models\DivisionalSecretariatOffice;
 
 class TeacherCreate extends Component
 {
@@ -139,12 +139,12 @@ class TeacherCreate extends Component
         $this->districtOption = DistrictsList::orderBy('district_name', 'asc')->get();
 
         $this->servicesOption = Service::where('service_id', 'SER001')->get();
-        
+
         //$this->positionsOption = Position::all();
         $this->institutionTypeOption = InstitutionType::all();
         $this->officeLevelsOption = OfficeLevel::all();
         $this->officesOption = Workplaces::all();
-        $this->appointmentCategoriesOption = AppointmentCategorie::all();
+        $this->appointmentCategoriesOption = AppointmentCategory::all();
     }
 
     public function updatedDistrict($value){

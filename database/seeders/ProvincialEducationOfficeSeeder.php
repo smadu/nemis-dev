@@ -16,10 +16,10 @@ class ProvincialEducationOfficeSeeder extends Seeder
     {
         DB::table('provincial_education_offices')->insert([
             [
-                'peo_id' => 'PEO001',
-                'pmoe_id' => 'PMOE01', // Central Province
-                'peo_name' => 'Provincial Department of Education - Central Province',
-                'peo_short_name' => 'PDE - Central',
+                'workplace_id' => 'PEO0000001',
+                'pmoe_wp_id' => 'PMOE000001', // Central Province
+                'name' => 'Provincial Department of Education - Central Province',
+                'short_name' => 'PDE - Central',
                 'email' => 'info1@emis.lk',
                 'phone' => '0112785142',
                 'address' => 'Provincial Department of Education, Kandy, Sri Lanka',
@@ -31,10 +31,10 @@ class ProvincialEducationOfficeSeeder extends Seeder
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],
             [
-                'peo_id' => 'PEO002',
-                'pmoe_id' => 'PMOE02', // Sabaragamuwa Province
-                'peo_name' => 'Provincial Department of Education - Sabaragamuwa Province',
-                'peo_short_name' => 'PDE - Sabaragamuwa',
+                'workplace_id' => 'PEO0000002',
+                'pmoe_wp_id' => 'PMOE000002', // Sabaragamuwa Province
+                'name' => 'Provincial Department of Education - Sabaragamuwa Province',
+                'short_name' => 'PDE - Sabaragamuwa',
                 'email' => 'info2@emis.lk',
                 'phone' => '0112785149',
                 'address' => 'Ministry of Education, Ratnapura, Sri Lanka',
@@ -46,10 +46,10 @@ class ProvincialEducationOfficeSeeder extends Seeder
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],
             [
-                'peo_id' => 'PEO003',
-                'pmoe_id' => 'PMOE03', // Eastern Province
-                'peo_name' => 'Provincial Department of Education - Eastern Province',
-                'peo_short_name' => 'PDE - Eastern',
+                'workplace_id' => 'PEO0000003',
+                'pmoe_wp_id' => 'PMOE000003', // Eastern Province
+                'name' => 'Provincial Department of Education - Eastern Province',
+                'short_name' => 'PDE - Eastern',
                 'email' => 'info3@emis.lk',
                 'phone' => '0112785145',
                 'address' => 'Ministry of Education, Trincomalee, Sri Lanka',
@@ -61,10 +61,10 @@ class ProvincialEducationOfficeSeeder extends Seeder
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],
             [
-                'peo_id' => 'PEO004',
-                'pmoe_id' => 'PMOE04', // North Western Province
-                'peo_name' => 'Provincial Department of Education - North Western Province',
-                'peo_short_name' => 'PDE - North Western',
+                'workplace_id' => 'PEO0000004',
+                'pmoe_wp_id' => 'PMOE000004', // North Western Province
+                'name' => 'Provincial Department of Education - North Western Province',
+                'short_name' => 'PDE - North Western',
                 'email' => 'info4@emis.lk',
                 'phone' => '0112785146',
                 'address' => 'Ministry of Education, Kurunegala, Sri Lanka',
@@ -76,10 +76,10 @@ class ProvincialEducationOfficeSeeder extends Seeder
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],
             [
-                'peo_id' => 'PEO005',
-                'pmoe_id' => 'PMOE05', // Southern Province
-                'peo_name' => 'Provincial Department of Education - Southern Province',
-                'peo_short_name' => 'PDE - Southern',
+                'workplace_id' => 'PEO0000005',
+                'pmoe_wp_id' => 'PMOE000005', // Southern Province
+                'name' => 'Provincial Department of Education - Southern Province',
+                'short_name' => 'PDE - Southern',
                 'email' => 'info5@emis.lk',
                 'phone' => '0112785143',
                 'address' => 'Provincial Department of Education, Galle, Sri Lanka',
@@ -91,10 +91,10 @@ class ProvincialEducationOfficeSeeder extends Seeder
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],
             [
-                'peo_id' => 'PEO006',
-                'pmoe_id' => 'PMOE06', // Western Province
-                'peo_name' => 'Provincial Department of Education - Western Province',
-                'peo_short_name' => 'PDE - Western',
+                'workplace_id' => 'PEO0000006',
+                'pmoe_wp_id' => 'PMOE000006', // Western Province
+                'name' => 'Provincial Department of Education - Western Province',
+                'short_name' => 'PDE - Western',
                 'email' => 'info6@emis.lk',
                 'phone' => '0112785141',
                 'address' => 'Ministry of Education, Isurupaya, Battaramulla, Sri Lanka',
@@ -106,10 +106,10 @@ class ProvincialEducationOfficeSeeder extends Seeder
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],
             [
-                'peo_id' => 'PEO007',
-                'pmoe_id' => 'PMOE07', // Northern Province
-                'peo_name' => 'Provincial Department of Education - Northern Province',
-                'peo_short_name' => 'PDE - Northern',
+                'workplace_id' => 'PEO0000007',
+                'pmoe_wp_id' => 'PMOE000007', // Northern Province
+                'name' => 'Provincial Department of Education - Northern Province',
+                'short_name' => 'PDE - Northern',
                 'email' => 'info7@emis.lk',
                 'phone' => '0112785144',
                 'address' => 'Ministry of Education, Jaffna, Sri Lanka',
@@ -121,10 +121,10 @@ class ProvincialEducationOfficeSeeder extends Seeder
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],
             [
-                'peo_id' => 'PEO008',
-                'pmoe_id' => 'PMOE08', // Uva Province
-                'peo_name' => 'Provincial Department of Education - Uva Province',
-                'peo_short_name' => 'PDE - Uva',
+                'workplace_id' => 'PEO0000008',
+                'pmoe_wp_id' => 'PMOE000008', // Uva Province
+                'name' => 'Provincial Department of Education - Uva Province',
+                'short_name' => 'PDE - Uva',
                 'email' => 'info8@emis.lk',
                 'phone' => '0112785148',
                 'address' => 'Ministry of Education, Badulla, Sri Lanka',
@@ -136,10 +136,10 @@ class ProvincialEducationOfficeSeeder extends Seeder
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],
             [
-                'peo_id' => 'PEO009',
-                'pmoe_id' => 'PMOE09', // North Central Province
-                'peo_name' => 'Provincial Department of Education - North Central Province',
-                'peo_short_name' => 'PDE - North Central',
+                'workplace_id' => 'PEO0000009',
+                'pmoe_wp_id' => 'PMOE000009', // North Central Province
+                'name' => 'Provincial Department of Education - North Central Province',
+                'short_name' => 'PDE - North Central',
                 'email' => 'info9@emis.lk',
                 'phone' => '0112785147',
                 'address' => 'Ministry of Education, Anuradhapura, Sri Lanka',

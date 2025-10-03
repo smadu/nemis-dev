@@ -9,14 +9,16 @@ class MinistryOfEducationOffice extends Model
 {
     use HasFactory;
 
-    protected $table = 'ministry_of_education_offices';
+    protected $table = 'ministry_of_education_offices'; // table name
 
-    protected $primaryKey = 'id';
+    protected $primaryKey = 'id'; // primary key
+    public $incrementing = true;  // since you used $table->id()
+    protected $keyType = 'int';   // id is bigint by default
 
     protected $fillable = [
-        'moe_id',
-        'moe_name',
-        'moe_short_name',
+        'workplace_id',
+        'name',
+        'short_name',
         'email',
         'phone',
         'address',
@@ -28,6 +30,6 @@ class MinistryOfEducationOffice extends Model
 
     public function provincialOffices()
     {
-        return $this->hasMany(ProvincialMinistryOfEducationOffice::class, 'moe_id', 'moe_id');
+        return $this->hasMany(ProvincialMinistryOfEducationOffice::class, 'moe_wp_id', 'workplace_id');
     }
 }

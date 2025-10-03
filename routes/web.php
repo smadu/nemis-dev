@@ -4,27 +4,33 @@ use App\Livewire\Roles\RoleEdit;
 use App\Livewire\Users\UserEdit;
 use App\Livewire\Roles\RoleIndex;
 use App\Livewire\Users\UserIndex;
-
 use App\Livewire\Roles\RoleCreate;
 use App\Livewire\Settings\Profile;
 use App\Livewire\Users\UserCreate;
-
 use App\Livewire\Settings\Password;
 use App\Livewire\Settings\Appearance;
-
 use App\Livewire\Teacher\TeacherEdit;
 use App\Livewire\Teacher\TeacherList;
-use Illuminate\Support\Facades\Route;
 
+use Illuminate\Support\Facades\Route;
+use App\Livewire\Offices\OfficesIndex;
 use App\Livewire\Teacher\TeacherCreate;
+
 use App\Livewire\Principal\PrincipalEdit;
 use App\Livewire\Principal\PrincipalList;
 use App\Livewire\Principal\PrincipalCreate;
 
-use App\Livewire\Institution\School\SchoolEdit;
-use App\Livewire\Institution\School\SchoolList;
-use App\Livewire\Institution\School\SchoolCreate;
-use App\Livewire\Institution\School\SchoolDelete;
+use App\Livewire\Offices\Deo\DeoOfficesList;
+use App\Livewire\Offices\Peo\PeoOfficesList;
+use App\Livewire\Offices\Zeo\ZeoOfficesList;
+
+use App\Livewire\Offices\Deo\DeoOfficesCreate;
+use App\Livewire\Offices\Moe\MoeOfficesCreate;
+use App\Livewire\Offices\Peo\PeoOfficesCreate;
+use App\Livewire\Offices\Zeo\ZeoOfficesCreate;
+use App\Livewire\Institutions\InstitutionsIndex;
+use App\Livewire\Offices\Pmoe\PmoeOfficesCreate;
+use App\Livewire\Institutions\InstitutionsCreate;
 
 Route::get('/', function () {
     return view('welcome');
@@ -49,11 +55,23 @@ Route::middleware(['auth'])->group(function () {
     Route::get('principal/create', PrincipalCreate::class)->name('principal.create');
     Route::get('principal/edit', PrincipalEdit::class)->name('principal.edit');
 
-    //institutions management --ashan00
-    Route::get('institution/school/list', SchoolList::class)->name('school.list');
-    Route::get('institution/school/create', SchoolCreate::class)->name('school.create');
-    Route::get('institution/school/{id}/edit', SchoolEdit::class)->name('school.edit');
-    Route::get('institution/school/{id}/delete', SchoolDelete::class)->name('school.delete');
+    Route::get('institutions', InstitutionsIndex::class)->name('institutions.index');
+    Route::get('institutions/create', InstitutionsCreate::class)->name('institutions.create');
+
+    Route::get('offices/deo/list', DeoOfficesList::class)->name('offices.deo.list');
+    Route::get('offices/deo/create', DeoOfficesCreate::class)->name('offices.deo.create');
+
+    Route::get('offices/zeo/list', ZeoOfficesList::class)->name('offices.zeo.list');
+    Route::get('offices/zeo/create', ZeoOfficesCreate::class)->name('offices.zeo.create');
+
+    Route::get('offices/peo/list', PeoOfficesList::class)->name('offices.peo.list');
+    Route::get('offices/peo/create', PeoOfficesCreate::class)->name('offices.peo.create');
+
+
+    Route::get('offices', OfficesIndex::class)->name('offices.index');
+
+    Route::get('offices/moe/create', MoeOfficesCreate::class)->name('offices.moe.create');
+    Route::get('offices/pmoe/create', PmoeOfficesCreate::class)->name('offices.pmoe.create');
 
 
         // In web.php or api.php
@@ -70,8 +88,6 @@ Route::middleware(['auth'])->group(function () {
         Route::get('teacher/create', TeacherCreate::class)->name('teacher.create');
         Route::get('teacher/edit', TeacherEdit::class)->name('teacher.edit');
     });
-
-
 
 });
 

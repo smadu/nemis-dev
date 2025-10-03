@@ -7,11 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class EmployerCurrentAppointment extends Model
 {
-       use HasFactory;
+    use HasFactory;
 
     protected $table = 'employer_current_appointments';
 
-    protected $primaryKey = 'id';
+    protected $primaryKey = 'id'; // default primary key
 
     protected $fillable = [
         'appointment_id',
@@ -24,7 +24,9 @@ class EmployerCurrentAppointment extends Model
         'office_id',
     ];
 
-    // Relationships
+    /**
+     * Relationships
+     */
 
     public function employee()
     {

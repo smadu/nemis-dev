@@ -19,7 +19,7 @@ class PeopleSeeder extends Seeder
 
         foreach (range(1, 20) as $index) {
             DB::table('people')->insert([
-                'people_id'      => 'PE' . date('y') . str_pad($faker->unique()->numberBetween(1, 9999), 4, '0', STR_PAD_LEFT), // PE250001
+                'people_id'      => strtoupper(Str::random(12)),
                 'nic'            => $faker->randomElement([
                                         strtoupper($faker->bothify('#########V')), 
                                         $faker->numerify('############')

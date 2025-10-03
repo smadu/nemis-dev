@@ -16,9 +16,9 @@ class MinistryOfEducationSeeder extends Seeder
         DB::table('ministry_of_education_offices')->insert([
             //Ministry of Education
             [
-                'moe_id' => 'MOE01',
-                'moe_name' => 'Ministry of Education',
-                'moe_short_name' => 'MOE',
+                'workplace_id' => 'MOE0000001',
+                'name' => 'Ministry of Education',
+                'short_name' => 'MOE',
                 'email' => 'info@emis.lk',
                 'phone' => '0112785141',
                 'address' => 'Ministry of Education, Isurupaya, Baththaramulla, Sri Lanka',

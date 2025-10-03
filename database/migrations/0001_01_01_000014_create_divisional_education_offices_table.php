@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('divisional_education_offices', function (Blueprint $table) {
             $table->id();
-            $table->char('deo_id',10)->unique();
-            $table->char('zeo_id',10);
-            $table->string('deo_name');
-            $table->string('deo_short_name',50);
+            $table->char('workplace_id',10)->unique()->comment('Office ID');
+            $table->char('zeo_wp_id',10);
+            $table->string('name');
+            $table->string('short_name',50);
             $table->string('email')->unique()->nullable();
             $table->string('phone', 20)->unique()->nullable();
             $table->string('address')->nullable();
@@ -26,7 +26,7 @@ return new class extends Migration
             $table->enum('active_status', ['1','0'])->default('1');
             $table->timestamps();
 
-            $table->foreign('zeo_id')->references('zeo_id')->on('zonal_education_offices')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('zeo_wp_id')->references('workplace_id')->on('zonal_education_offices')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

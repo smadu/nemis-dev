@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('ministry_of_education_offices', function (Blueprint $table) {
             $table->id();
-            $table->char('moe_id',10)->unique()->comment('Ministry of Education Office ID');
-            $table->string('moe_name');
-            $table->string('moe_short_name',50);
+            $table->char('workplace_id',10)->unique()->comment('Office ID uuid');
+            $table->string('name');
+            $table->string('short_name',50);
             $table->string('email')->unique();
             $table->string('phone', 20)->unique();
             $table->string('address')->nullable();

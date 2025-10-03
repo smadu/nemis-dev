@@ -16,12 +16,12 @@ class OfficeLevelSeeder extends Seeder
     public function run(): void
     {
         $officeLevels = [
-            ['office_level_id' => 'OLID01', 'office_level_name' => 'Ministry'],
-            ['office_level_id' => 'OLID02', 'office_level_name' => 'Provincial Ministry'],
-            ['office_level_id' => 'OLID03', 'office_level_name' => 'Provincial Education Office'],
-            ['office_level_id' => 'OLID04', 'office_level_name' => 'Zonal Education Office'],
-            ['office_level_id' => 'OLID05', 'office_level_name' => 'Divisional Education Office'],
-            ['office_level_id' => 'OLID06', 'office_level_name' => 'Institution'],
+            ['office_level_id' => 'OLID001', 'office_level_name' => 'Ministry'],
+            ['office_level_id' => 'OLID002', 'office_level_name' => 'Provincial Ministry'],
+            ['office_level_id' => 'OLID003', 'office_level_name' => 'Provincial Education Office'],
+            ['office_level_id' => 'OLID004', 'office_level_name' => 'Zonal Education Office'],
+            ['office_level_id' => 'OLID005', 'office_level_name' => 'Divisional Education Office'],
+            ['office_level_id' => 'OLID006', 'office_level_name' => 'Institution'],
         ];
 
         foreach ($officeLevels as $level) {

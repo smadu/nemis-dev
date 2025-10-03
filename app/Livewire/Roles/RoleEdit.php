@@ -38,6 +38,7 @@ class RoleEdit extends Component
         $this->role->syncPermissions($this->selectedPermissions);
 
         //session()->flash('message', 'Role created successfully.');
+        $this->dispatch('toast', message: 'Record saved successfully!', type: 'success');
 
         return redirect()->route('roles.index')->with('message', 'Role updated successfully.');
     }

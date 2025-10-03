@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('provincial_education_offices', function (Blueprint $table) {
             $table->id();
-            $table->char('peo_id',10)->unique()->comment('Provincial Education Office ID');
-            $table->char('pmoe_id',10);
-            $table->string('peo_name');
-            $table->string('peo_short_name',50);
+            $table->char('workplace_id',10)->unique()->comment('Office ID');
+            $table->char('pmoe_wp_id',10);
+            $table->string('name');
+            $table->string('short_name',50);
             $table->string('email')->unique();
             $table->string('phone', 20)->unique();
             $table->string('address')->nullable();
@@ -26,7 +26,7 @@ return new class extends Migration
             $table->enum('active_status', ['1','0'])->default('1');
             $table->timestamps();
 
-            $table->foreign('pmoe_id')->references('pmoe_id')->on('provincial_ministry_of_education_offices')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('pmoe_wp_id')->references('workplace_id')->on('provincial_ministry_of_education_offices')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

@@ -14,12 +14,14 @@ class ProvincialEducationOffice extends Model
     protected $table = 'provincial_education_offices';
 
     protected $primaryKey = 'id';
+    public $incrementing = true;
+    protected $keyType = 'int';
 
     protected $fillable = [
-        'peo_id',
-        'pmoe_id',
-        'peo_name',
-        'peo_short_name',
+        'workplace_id',
+        'pmoe_wp_id',
+        'name',
+        'short_name',
         'email',
         'phone',
         'address',
@@ -30,10 +32,14 @@ class ProvincialEducationOffice extends Model
     ];
 
     /**
-     * Relationship: Provincial Education Office belongs to a Provincial MOE Office
+     * Each Provincial Education Office belongs to a Provincial Ministry of Education Office
      */
-    public function provincialMoeOffice()
+    public function provincialMinistryOfEducationOffice()
     {
-        return $this->belongsTo(ProvincialMinistryOfEducationOffice::class, 'pmoe_id', 'pmoe_id');
+        return $this->belongsTo(
+            ProvincialMinistryOfEducationOffice::class,
+            'pmoe_wp_id',   // foreign key on this table
+            'workplace_id'  // referenced key in provincial_ministry_of_education_offices
+        );
     }
 }

@@ -131,7 +131,7 @@ class ServiceRankSeeder extends Seeder
                 'updated_at' => $now
             ],
 
-            // Sri Lanka ducation Administrative Service
+            // Sri Lanka education Administrative Service
             [
                 'rank_id'   => 'RANK013',
                 'service_id'=> 'SER005',
@@ -153,6 +153,35 @@ class ServiceRankSeeder extends Seeder
             [
                 'rank_id'   => 'RANK015',
                 'service_id'=> 'SER005',
+                'rank_name' => 'I',
+                'description' => 'Top rank in administrative service',
+                'active_status' => '1',
+                'created_at' => $now, 
+                'updated_at' => $now
+            ],
+
+            // Sri Lanka Administrative Service(SLAS)
+            [
+                'rank_id'   => 'RANK016',
+                'service_id'=> 'SER006',
+                'rank_name' => 'III',
+                'description' => 'Entry-level rank in administrative service',
+                'active_status' => '1',
+                'created_at' => $now, 
+                'updated_at' => $now
+            ],
+            [
+                'rank_id'   => 'RANK017',
+                'service_id'=> 'SER006',
+                'rank_name' => 'II',
+                'description' => 'Second rank in administrative service',
+                'active_status' => '1',
+                'created_at' => $now, 
+                'updated_at' => $now
+            ],
+            [
+                'rank_id'   => 'RANK018',
+                'service_id'=> 'SER006',
                 'rank_name' => 'I',
                 'description' => 'Top rank in administrative service',
                 'active_status' => '1',

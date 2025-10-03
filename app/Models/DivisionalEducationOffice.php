@@ -17,10 +17,10 @@ class DivisionalEducationOffice extends Model
     protected $primaryKey = 'id';
 
     protected $fillable = [
-        'deo_id',
-        'zeo_id',
-        'deo_name',
-        'deo_short_name',
+        'workplace_id',
+        'zeo_wp_id',
+        'name',
+        'short_name',
         'email',
         'phone',
         'address',
@@ -31,10 +31,10 @@ class DivisionalEducationOffice extends Model
     ];
 
     /**
-     * Relationship: DEO belongs to a Zonal Education Office
+     * Relationship: Divisional Education Office belongs to Zonal Education Office
      */
     public function zonalEducationOffice()
     {
-        return $this->belongsTo(ZonalEducationOffice::class, 'zeo_id', 'zeo_id');
+        return $this->belongsTo(ZonalEducationOffice::class, 'zeo_wp_id', 'workplace_id');
     }
 }

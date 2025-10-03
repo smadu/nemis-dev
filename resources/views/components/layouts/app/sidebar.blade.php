@@ -22,19 +22,21 @@
                     :current="request()->routeIs('roles.index')" wire:navigate>{{ __('Roles') }}</flux:navlist.item>
                 @endrole
                 <flux:navlist.item icon="users" :href="route('users.index')" :current="request()->routeIs('users.index')" wire:navigate>{{ __('Users') }}</flux:navlist.item>
+                <flux:navlist.item icon="building-library" :href="route('institutions.index')" :current="request()->routeIs('institutions.index')" wire:navigate>{{ __('Institutions') }}</flux:navlist.item>
+            </flux:navlist.group>
+
+            <flux:navlist.group expandable heading="Offices" class="grid">
+                <flux:navlist.item icon="squares-2x2" :href="route('offices.index')" :current="request()->routeIs('offices.index')" wire:navigate>{{ __('Overview') }}</flux:navlist.item>
+                <flux:navlist.item icon="building-office" :href="route('offices.peo.list')" :current="request()->routeIs('offices.peo.list')" wire:navigate>{{ __('Provincial Offices') }}</flux:navlist.item>
+                <flux:navlist.item icon="building-office" :href="route('offices.zeo.list')" :current="request()->routeIs('offices.zeo.list')" wire:navigate>{{ __('Zonal Offices') }}</flux:navlist.item>
+                <flux:navlist.item icon="building-office" :href="route('offices.deo.list')" :current="request()->routeIs('offices.deo.list')" wire:navigate>{{ __('Divisional Offices') }}</flux:navlist.item>
             </flux:navlist.group>
 
             <flux:navlist.group expandable heading="Employers" class="grid">
-                <flux:navlist.item icon="user-group" :href="route('teacher.list')" :current="request()->routeIs('teacher.list')"
-                    wire:navigate>{{ __('Teachers') }}</flux:navlist.item>
-                <flux:navlist.item icon="users" :href="route('principal.list')" :current="request()->routeIs('principal.list')"
-                    wire:navigate>{{ __('Principals') }}</flux:navlist.item>
-            </flux:navlist.group>
-
-            <flux:navlist.group expandable heading="Institutions" class="grid">
-                <flux:navlist.item icon="academic-cap" :href="route('school.list')" :current="request()->routeIs('school.list')"
-                    wire:navigate>{{ __('Schools') }}</flux:navlist.item>
-
+                <flux:navlist.item :href="route('teacher.list')" :current="request()->routeIs('teacher.list')"
+                    wire:navigate>{{ __('Teacher') }}</flux:navlist.item>
+                <flux:navlist.item :href="route('principal.list')" :current="request()->routeIs('principal.list')"
+                    wire:navigate>{{ __('Principal') }}</flux:navlist.item>
             </flux:navlist.group>
 
         </flux:navlist>
@@ -42,12 +44,12 @@
         <flux:spacer />
 
         <flux:navlist variant="outline">
-            <flux:navlist.item icon="folder-git-2" href="https://github.com/laravel/livewire-starter-kit"
+            <flux:navlist.item icon="folder-git-2" href="#"
                 target="_blank">
-                {{ __('Repository') }}
+                {{ __('Circular') }}
             </flux:navlist.item>
 
-            <flux:navlist.item icon="book-open-text" href="https://laravel.com/docs/starter-kits#livewire"
+            <flux:navlist.item icon="book-open-text" href="#"
                 target="_blank">
                 {{ __('Documentation') }}
             </flux:navlist.item>

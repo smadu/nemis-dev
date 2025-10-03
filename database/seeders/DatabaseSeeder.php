@@ -35,17 +35,24 @@ class DatabaseSeeder extends Seeder
         $this->call(ProvincialEducationOfficeSeeder::class);
         $this->call(ZonalEducationOfficeSeeder::class);
         $this->call(DivisionalEducationOfficeSeeder::class);
-        $this->call(InstitutionSeeder::class);
+        $this->call(InstitutionTypesTableSeeder::class);
+        $this->call(InstitutionCategoriesTableSeeder::class);
+        //$this->call(InstitutionTableSeeder::class);
+
+        $this->call(InstitutionTableSeederPart1::class);
+        $this->call(InstitutionTableSeederPart2::class);
+        $this->call(WorkplacesFromMinistrySeeder::class);
 
         $this->call(ServiceSeeder::class);
         $this->call(ServiceRankSeeder::class);
         $this->call(PositionSeeder::class);
+        $this->call(AppointmentCategorySeeder::class);
 
         $this->call(SuperAdminSeeder::class);
         $this->call(PeopleSeeder::class);
         $this->call(UserSeeder::class);
 
-        $this->call(AppointmentCategorySeeder::class);
+        
 
         $this->call(RolePermissionSeeder::class);
         

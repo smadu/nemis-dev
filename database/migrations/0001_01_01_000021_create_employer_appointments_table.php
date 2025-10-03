@@ -13,25 +13,26 @@ return new class extends Migration
     {
         Schema::create('employer_appointments', function (Blueprint $table) {
             $table->id();
-            $table->string('appointment_id', 12)->unique();
-            $table->string('employee_id', 12);
+            $table->char('appointment_id', 12)->unique();
+            $table->char('employee_id', 12);
             $table->date('first_appointment_date');
             $table->date('retirement_date');
             $table->char('service_id', 20)->comment('e.g., POS001, POS002, get from position table');
             $table->char('rank_id', 20)->comment('e.g., RANK001, RANK002, get from rank table');
-            $table->string('position_id', 10)->comment('e.g., POS001, POS002, get from position table');
+            $table->char('position_id', 10)->comment('e.g., POS001, POS002, get from position table');
             $table->char('office_level_id', 10)->comment('e.g., OL01, OL02');
             $table->char('office_id', 20)->comment('ID of the primary office');
-            $table->char('appointment_category_id', 5)->comment('e.g., AC01, AC02, get from appointment_categories table');
-            $table->string('appointment_letter_no')->nullable()->comment('Appointment letter number');
-            $table->string('appointment_letter')->nullable()->comment('Path to the appointment letter document');
+            $table->char('appointment_category_id', 10)->comment('e.g., AC01, AC02, get from appointment_categories table');
+            $table->char('appointment_letter_no', 255)->nullable()->comment('Appointment letter number');
+            $table->char('appointment_letter', 255)->nullable()->comment('Path to the appointment letter document');
+            $table->char('w_op_no', 10)->nullable()->comment('W&OP number'); // fixed
             $table->enum('active_status', ['0', '1'])->default('1')->comment('1: Active, 0: Inactive');
             $table->timestamps();
 
             // Composite unique constraint
             $table->unique(['service_id', 'employee_id']);
 
-            // Foreign key constraint
+            // Foreign key constraints
             $table->foreign('office_level_id')->references('office_level_id')->on('office_levels')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('employee_id')->references('people_id')->on('people')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('appointment_category_id')->references('appointment_category_id')->on('appointment_categories')->onDelete('cascade')->onUpdate('cascade');
