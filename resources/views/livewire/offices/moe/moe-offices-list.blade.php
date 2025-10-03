@@ -1,14 +1,14 @@
 <div>
     <div class="relative mb-6 w-full">
-        <flux:heading size="xl" level="1">{{ __('Provincial Ministry of Education Office') }}</flux:heading>
-        <flux:subheading size="lg" class="mb-6">{{ __('Manage Provincial Ministry of Education Office profile and account') }}
+        <flux:heading size="xl" level="1">{{ __('Ministry of Education Office') }}</flux:heading>
+        <flux:subheading size="lg" class="mb-6">{{ __('Manage Ministry of Education Office profile and account') }}
         </flux:subheading>
         <flux:separator variant="subtle" />
 
         <div class="my-4 gap-2 justify-end flex">
 
-            <a href="{{ route('offices.pmoe.create') }}">
-                <flux:button>Create Provincial Ministry Office</flux:button>
+            <a href="{{ route('offices.moe.create') }}">
+                <flux:button>Create Ministry of Education Office</flux:button>
             </a>
 
         </div>
@@ -35,7 +35,7 @@
                 </tr>
             </thead>
             <tbody class="bg-white dark:bg-slate-900 divide-y divide-slate-200 dark:divide-slate-700">
-                @forelse ($provincialEducationMinistries as $data)
+                @forelse ($educationMinistries as $data)
                     <tr class="hover:bg-slate-100 dark:hover:bg-slate-800 transition">
                         <td class="px-6 py-4 whitespace-nowrap">
                             <div class="flex items-center">
@@ -90,7 +90,7 @@
 
 
         <div class="mt-4 mx-10">
-            {{ $provincialEducationMinistries->links() }}
+            {{ $educationMinistries->links() }}
         </div>
     </div>
 </div>

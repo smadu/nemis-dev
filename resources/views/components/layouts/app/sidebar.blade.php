@@ -27,8 +27,8 @@
 
             <flux:navlist.group expandable heading="Offices" class="grid">
                 <flux:navlist.item icon="squares-2x2" :href="route('offices.index')" :current="request()->routeIs('offices.index')" wire:navigate>{{ __('Overview') }}</flux:navlist.item>
+                <flux:navlist.item icon="building-library" :href="route('offices.moe.list')" :current="request()->routeIs('offices.moe.list')" wire:navigate>{{ __('Education Ministries') }}</flux:navlist.item>
                 <flux:navlist.item icon="building-library" :href="route('offices.pmoe.list')" :current="request()->routeIs('offices.pmoe.list')" wire:navigate>{{ __('Provincial Ministries') }}</flux:navlist.item>
-
                 <flux:navlist.item icon="building-office" :href="route('offices.peo.list')" :current="request()->routeIs('offices.peo.list')" wire:navigate>{{ __('Provincial Offices') }}</flux:navlist.item>
                 <flux:navlist.item icon="building-office" :href="route('offices.zeo.list')" :current="request()->routeIs('offices.zeo.list')" wire:navigate>{{ __('Zonal Offices') }}</flux:navlist.item>
                 <flux:navlist.item icon="building-office" :href="route('offices.deo.list')" :current="request()->routeIs('offices.deo.list')" wire:navigate>{{ __('Divisional Offices') }}</flux:navlist.item>
